@@ -6,7 +6,6 @@ function App() {
     <>
       <main>
         <Outlet />
-        <p>a</p>
       </main>
     </>
   );
