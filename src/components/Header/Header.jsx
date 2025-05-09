@@ -1,6 +1,7 @@
 import "./Header.css";
-import logo from "../../../public/Logo_white.svg";
-import cart from "../../../public/cart_white.svg";
+
+import logo from "../../assets/LogoWhite.svg";
+import cart from "../../assets/CartWhite.svg";
 
 const Header = () => {
   return (
