@@ -1,26 +1,25 @@
-.header_bar{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    height: 20%;
-    background-color: #0a0744;
-    color: white;
+.header_bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 20%;
+  background-color: #001f3f;
+  color: white;
 }
 
-.logo{
-    margin-right: 2rem;
-    width: 3rem;
-    height: 2.7rem;
-
+.logo {
+  margin-right: 2rem;
+  width: 3rem;
+  height: 2.7rem;
 }
 
-.logo_nombre{
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+.logo_nombre {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-.logo_nombre span{
-    font-size: 2.3rem;
-    font-weight: bold;
+.logo_nombre span {
+  font-size: 2.3rem;
+  font-weight: bold;
 }
