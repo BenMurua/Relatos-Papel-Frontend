@@ -12,7 +12,7 @@ const Landing = () => {
     const startTimer = () => {
       clearTimeout(timerId);
       timerId = setTimeout(() => {
-        navigate(RoutesValues.home);
+        navigate(RoutesValues.app);
       }, 5000);
     };
 

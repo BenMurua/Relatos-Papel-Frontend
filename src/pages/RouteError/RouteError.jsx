@@ -1,7 +1,7 @@
 import { useRouteError } from "react-router-dom";
-import "./LandingError.css";
+import "./RouteError.css";
 
-const LandingError = () => {
+const RouteError = () => {
   const error = useRouteError();
 
   return (
@@ -15,4 +15,4 @@ const LandingError = () => {
   );
 };
 
-export default LandingError;
+export default RouteError;
