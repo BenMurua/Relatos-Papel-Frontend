@@ -1,19 +1,53 @@
-.product_list {
+.order-summary {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-summary__title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.order-summary__product-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.container {
+.order-summary__subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.order-summary__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.left {
+.order-summary__item-name {
   text-align: left;
 }
 
-.right {
+.order-summary__item-price {
   text-align: right;
+}
+
+.order-summary__label {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.order-summary__total-label {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.order-summary__row--total .order-summary__item-price {
+  font-weight: bold;
+  color: #007bff;
 }

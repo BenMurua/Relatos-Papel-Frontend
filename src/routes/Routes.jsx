@@ -4,6 +4,7 @@ import Landing from "../pages/Landing/Landing";
 import LandingError from "../pages/RouteError/RouteError";
 import { RoutesValues } from "../models/RoutesValues";
 import Layout from "../components/Layout/Layout";
+import Checkout from "../pages/Checkout/Checkout";
 export const router = createBrowserRouter([
   {
     path: RoutesValues.landing,
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         index: true, // Esto hace que HomePage sea la ruta por defecto para "/"element: <HomePage />,
         element: <Home />,
+      },
+      {
+        path: RoutesValues.checkout,
+        element: <Checkout />,
       },
     ],
   },

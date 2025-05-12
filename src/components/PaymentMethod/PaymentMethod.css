@@ -1,4 +1,4 @@
-.payment_method {
+.payment-method {
   max-width: 31.25rem;
   margin: 1.25rem auto;
   padding: 1.25rem;
@@ -6,22 +6,23 @@
   border-radius: 0.5rem;
   background-color: #f9f9f9;
   box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
-.payment_method h2 {
+.payment-method__title {
   font-size: 1.6rem;
   color: #333;
   margin-bottom: 0.625rem;
   text-align: center;
 }
 
-fieldset {
+.payment-method__fieldset {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-legend {
+.payment-method__legend {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -29,33 +30,29 @@ legend {
   color: #333;
 }
 
-div {
+.payment-method__option {
   display: flex;
   align-items: center;
   margin: 0.625rem 0;
 }
 
-input[type="radio"] {
+.payment-method__input {
   margin-right: 0.625rem;
   accent-color: #4caf50;
 }
 
-label {
+.payment-method__label {
   font-size: 1.2rem;
   color: #555;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-label:hover {
+.payment-method__label:hover {
   color: #007bff;
 }
 
-input[type="radio"]:checked + label {
+.payment-method__input:checked + .payment-method__label {
   font-weight: bold;
   color: #007bff;
-}
-
-.payment_method {
-  font-family: Arial, sans-serif;
 }
