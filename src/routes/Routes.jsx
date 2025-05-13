@@ -5,6 +5,7 @@ import LandingError from "../pages/RouteError/RouteError";
 import { RoutesValues } from "../models/RoutesValues";
 import Layout from "../components/Layout/Layout";
 import CartDetail from "../pages/CartDetail/CartDetail";
+import Checkout from "../pages/Checkout/Checkout";
 export const router = createBrowserRouter([
   {
     path: RoutesValues.landing,
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
         path: RoutesValues.cart,
         element: <CartDetail />,
       },
+      { path: RoutesValues.checkout, element: <Checkout /> },
     ],
   },
 ]);

@@ -1,0 +1,58 @@
+.payment-method {
+  max-width: 31.25rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 0.5rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.payment-method__title {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 0.625rem;
+  text-align: center;
+}
+
+.payment-method__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.payment-method__legend {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.payment-method__option {
+  display: flex;
+  align-items: center;
+  margin: 0.625rem 0;
+}
+
+.payment-method__input {
+  margin-right: 0.625rem;
+  accent-color: #4caf50;
+}
+
+.payment-method__label {
+  font-size: 1.2rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.payment-method__label:hover {
+  color: #007bff;
+}
+
+.payment-method__input:checked + .payment-method__label {
+  font-weight: bold;
+  color: #007bff;
+}
