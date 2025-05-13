@@ -1,0 +1,76 @@
+/* Estilos para CartItem.css o CartItem.module.css */
+.cart-item {
+  display: flex;
+  gap: 15px;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.cart-item-image {
+  width: 100px; /* Ajusta según necesites */
+  height: 150px; /* Ajusta según necesites */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.cart-item-author {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.cart-item-description {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.cart-item-price-unit {
+  font-size: 22px; /* Tamaño del precio "20€" */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.cart-item-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* O center, según el diseño final */
+  gap: 10px;
+  min-width: 150px; /* Para que los controles no se compriman mucho */
+}
+.cart-item-subtotal {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+.cart-item-remove-button {
+  background-color: transparent;
+  color: #d9534f; /* Rojo para eliminar */
+  border: 1px solid #d9534f;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cart-item-remove-button:hover {
+  background-color: #d9534f;
+  color: white;
+}

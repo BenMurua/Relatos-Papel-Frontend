@@ -1,0 +1,7 @@
+.cart-items-list {
+  flex: 2; /* Ocupa 2/3 del espacio */
+  min-width: 300px; /* Para evitar que se encoja demasiado */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

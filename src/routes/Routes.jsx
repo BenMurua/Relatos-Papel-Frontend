@@ -4,6 +4,7 @@ import Landing from "../pages/Landing/Landing";
 import LandingError from "../pages/RouteError/RouteError";
 import { RoutesValues } from "../models/RoutesValues";
 import Layout from "../components/Layout/Layout";
+import CartDetail from "../pages/CartDetail/CartDetail";
 export const router = createBrowserRouter([
   {
     path: RoutesValues.landing,
@@ -11,13 +12,16 @@ export const router = createBrowserRouter([
     errorElement: <LandingError />,
   },
   {
-    //si se confirma el cambio de este componente a Layout, se debe cambiar el nombre del Element al nuevo que corresponda
     path: RoutesValues.app,
     element: <Layout />,
     children: [
       {
-        index: true, // Esto hace que HomePage sea la ruta por defecto para "/"element: <HomePage />,
+        index: true,
         element: <Home />,
+      },
+      {
+        path: RoutesValues.cart,
+        element: <CartDetail />,
       },
     ],
   },
