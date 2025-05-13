@@ -1,0 +1,29 @@
+.book__card{
+    width: 30%;
+    height: 250px;
+    border: 1px;
+    border-style: solid;
+    border-color: grey;
+    padding: 1%;
+    align-items: center;
+}
+
+.book__image{
+    height: 60%;
+    object-fit: contain;
+    border-style: solid;
+    border-color: grey;
+}
+
+.add__cart{
+    background-color: grey;
+    border-radius: 2px;
+    width: 40%;
+    height: 10%;
+}
+
+.quantity__selector{
+    height: 5%;
+    border-radius: 2px;
+    background-color: grey;
+}
