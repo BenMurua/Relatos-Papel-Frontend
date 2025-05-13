@@ -1,4 +1,3 @@
-import React from "react";
 import "./QuantitySelector.css";
 
 function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
@@ -7,8 +6,7 @@ function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
     if (!isNaN(value) && value >= 1) {
       onQuantitySet(value);
     } else if (e.target.value === "") {
-      // Permite borrar para escribir, pero podría necesitar validación al perder foco
-      onQuantitySet(1); // O manejar un estado intermedio
+      onQuantitySet(1);
     }
   };
 
@@ -26,7 +24,6 @@ function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
         value={quantity}
         onChange={handleInputChange}
         onBlur={(e) => {
-          // Asegurar que no quede vacío o inválido
           if (
             parseInt(e.target.value, 10) < 1 ||
             isNaN(parseInt(e.target.value, 10))

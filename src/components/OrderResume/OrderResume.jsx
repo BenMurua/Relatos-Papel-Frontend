@@ -1,4 +1,3 @@
-import React from "react";
 import "./OrderResume.css";
 
 function OrderResume({ totalPrice, items, onConfirmPayment }) {
