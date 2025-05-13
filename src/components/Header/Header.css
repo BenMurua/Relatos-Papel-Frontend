@@ -1,25 +1,100 @@
+/* Header base styles */
 .header_bar {
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 20%;
-  background-color: #001f3f;
-  color: white;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--background-gradient); /* Usar la variable de fondo */
+  color: var(--text-color); /* Usar la variable de color de texto */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo {
-  margin-right: 2rem;
-  width: 3rem;
-  height: 2.7rem;
+  width: 40px;
+  height: auto;
 }
 
-.logo_nombre {
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.logo_nombre span {
-  font-size: 2.3rem;
+.logo-text {
+  font-size: 1.5rem;
   font-weight: bold;
+  color: var(--text-color); /* Usar la variable de color de texto */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+ 
+  color: var(--text-color); /* Color del ícono usando la variable global */
+  padding: 0.5rem;
+display:flex;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--button-hover); /* Usar la variable de hover */
+  color: var(--hover-toggledarkmode); /* Usar la variable de hover para el icono */
+}
+
+.theme-toggle .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+}
+
+.cart {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Usamos las variables globales que cambian entre modo claro y oscuro */
+
+/* Light Mode (Por defecto) */
+.light-mode {
+  background-color: var(--form-background); /* Fondo claro */
+  color: var(--text-color); /* Texto oscuro */
+}
+
+.light-mode .logo-text {
+  color: var(--text-color); /* Logo en texto oscuro */
+}
+
+.light-mode .theme-toggle {
+  border-color: var(--text-color); /* Borde de botón en color oscuro */
+  color: var(--text-color); /* Color del ícono en color oscuro */
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: var(--form-background); /* Fondo oscuro */
+  color: var(--text-color); /* Texto claro */
+}
+
+.dark-mode .logo-text {
+  color: var(--text-color); /* Logo en texto claro */
+}
+
+.dark-mode .theme-toggle {
+  border-color: var(--text-color); /* Borde del botón en color claro */
+  color: var(--text-color); /* Color del ícono en color claro */
+}
+
+.dark-mode .theme-toggle:hover {
+  background-color: var(--button-hover); /* Hover en el botón con variable */
+  color: var(--hover-toggledarkmode); /* Hover en el ícono */
 }
