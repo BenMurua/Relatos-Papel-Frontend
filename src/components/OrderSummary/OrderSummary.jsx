@@ -1,16 +1,15 @@
+import { getAllBooks } from "../../utils/BookUtils";
 import "./OrderSummary.css";
 
-const OrderSummary = ({ title, products }) => {
-  const subtotal = products.reduce(
-    (sum, item) => sum + item.quantity * item.price,
-    0
-  );
+const OrderSummary = () => {
+  const products = getAllBooks();
+  const subtotal = products.reduce((sum, item) => sum + 1 * item.price, 0);
   const shippingCost = 5;
   const total = subtotal + shippingCost;
 
   return (
     <div className="order-summary">
-      <h2 className="order-summary__title">{title}</h2>
+      <h2 className="order-summary__title">Subtotal</h2>
       <br />
 
       <div className="order-summary__product-list">
@@ -19,9 +18,9 @@ const OrderSummary = ({ title, products }) => {
 
         {products.map((product, index) => (
           <div key={index} className="order-summary__row">
-            <div className="order-summary__item-name">{product.name}</div>
+            <div className="order-summary__item-name">{product.title}</div>
             <div className="order-summary__item-price">
-              x{product.quantity} {product.price}€
+              x{1} {product.price}€
             </div>
           </div>
         ))}

@@ -21,7 +21,7 @@ export const searchBooks = (searchTerm) => {
     return [];
   }
   const lowerCaseSearchTerm = searchTerm.toLowerCase();
-  return initialItems.filter(
+  return this.getAllBooks().filter(
     (book) =>
       book.title.toLowerCase().includes(lowerCaseSearchTerm) ||
       book.author.toLowerCase().includes(lowerCaseSearchTerm) ||
