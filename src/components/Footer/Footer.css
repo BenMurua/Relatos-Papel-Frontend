@@ -1,8 +1,34 @@
-.footer-main{
-width: 100%;
+.footer__main{
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  height: 20%;
+  height: 7.5%;
   background-color: #001f3f;
   color: white;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer__right{
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.logo {
+  margin-right: 2rem;
+  width: 3rem;
+  height: 2.7rem;
+}
+
+.small__logo {
+  margin-right: 0.4rem;
+  height: 1rem;
+}
+
+.label{
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }

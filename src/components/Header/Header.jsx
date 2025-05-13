@@ -5,8 +5,8 @@ import cart from "../../assets/CartWhite.svg";
 
 const Header = () => {
   return (
-    <header className="header_bar">
-      <div className="logo_nombre">
+    <header className="header__bar">
+      <div className="logo__nombre">
         <img className="logo" src={logo} />
         <span>Relatos de papel</span>
       </div>

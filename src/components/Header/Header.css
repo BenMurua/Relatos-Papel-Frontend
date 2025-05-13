@@ -1,4 +1,4 @@
-.header_bar {
+.header__bar {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -13,13 +13,13 @@
   height: 2.7rem;
 }
 
-.logo_nombre {
+.logo__nombre {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
 
-.logo_nombre span {
+.logo__nombre span {
   font-size: 2.3rem;
   font-weight: bold;
 }
