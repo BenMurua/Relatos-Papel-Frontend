@@ -1,0 +1,7 @@
+.cart-items-list {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
