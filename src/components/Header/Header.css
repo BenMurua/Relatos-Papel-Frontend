@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: var(--background-gradient); /* Usar la variable de fondo */
+  background: var(--form-background); /* Usar la variable de fondo */
   color: var(--text-color); /* Usar la variable de color de texto */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -36,7 +36,7 @@
  
   color: var(--text-color); /* Color del ícono usando la variable global */
   padding: 0.5rem;
-display:flex;
+  all: unset;
 
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -54,6 +54,10 @@ display:flex;
 .cart-container {
   display: flex;
   align-items: center;
+  gap: 2rem; 
+}
+.cart-container button{
+  margin-top:0.3rem;
 }
 
 .cart {
