@@ -1,7 +1,18 @@
 .book__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Aumenta el minmax para mejor simetría */
+    gap: 2.5rem 2rem; /* Más separación entre cartas */
+    padding: 2.5rem 2vw 2rem 2vw; /* Padding lateral para que no pegue a los bordes */
+    background: var(--background-gradient);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    transition: background 0.3s;
+    min-height: 100vh;
+    box-sizing: border-box;
+    align-items: start; /* Alinea las cartas arriba */
+    justify-items: center; /* Centra las cartas en su celda */
+    overflow-y: auto;
+}
+
+.book__grid > * {
+    animation: fadeInBook 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
