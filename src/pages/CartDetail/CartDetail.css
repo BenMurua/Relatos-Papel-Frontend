@@ -7,7 +7,7 @@
 .shopping-cart-container h1 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--text-color);
 }
 
 .cart-layout {
