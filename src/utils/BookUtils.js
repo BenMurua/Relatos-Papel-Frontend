@@ -12,33 +12,12 @@ export const getBookById = (id) => {
   return mockBooks.find((book) => book.id === bookId);
 };
 
-export const searchBooks = (searchTerm) => {
-  if (
-    !searchTerm ||
-    typeof searchTerm !== "string" ||
-    searchTerm.trim() === ""
-  ) {
-    return [];
+export const searchBooks = (books, search, searchType) => {
+  const term = search.trim().toLowerCase();
+  if (!term) return books;
+  if (searchType === "author") {
+    return books.filter((book) => book.author.toLowerCase().includes(term));
   }
-  const lowerCaseSearchTerm = searchTerm.toLowerCase();
-  return initialItems.filter(
-    (book) =>
-      book.title.toLowerCase().includes(lowerCaseSearchTerm) ||
-      book.author.toLowerCase().includes(lowerCaseSearchTerm) ||
-      book.description.toLowerCase().includes(lowerCaseSearchTerm)
-  );
-};
-
-export const getBooksByAuthor = (authorName) => {
-  if (
-    !authorName ||
-    typeof authorName !== "string" ||
-    authorName.trim() === ""
-  ) {
-    return [];
-  }
-  const lowerCaseAuthorName = authorName.toLowerCase();
-  return mockBooks.filter((book) =>
-    book.author.toLowerCase().includes(lowerCaseAuthorName)
-  );
+  // Por defecto busca por título
+  return books.filter((book) => book.title.toLowerCase().includes(term));
 };
