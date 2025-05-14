@@ -3,13 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const BookCardContext = createContext();
 export const BookCardProvider = ({ children }) => {
   const [bookList, setBookList] = useState([]);
-  //localStorage.getItem("app-bookList") || []
 
-  /*   useEffect(() => {
-    localStorage.setItem("app-bookCard", JSON.stringify(bookCard));
-  }, [bookCard]); */
-
-  //Funcion para añadir libros al carrito
   const addBook = (book) => {
     const bookToUpdate = bookList.find((item) => item.id === book.id);
     if (bookToUpdate) {
