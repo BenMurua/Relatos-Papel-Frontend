@@ -9,11 +9,11 @@ const OrderSummary = () => {
 
   return (
     <div className="order-summary">
-      <h2 className="order-summary__title">Subtotal</h2>
+      <h2>Subtotal</h2>
       <br />
 
       <div className="order-summary__product-list">
-        <h2 className="order-summary__subtitle">PRODUCTO</h2>
+        <h2>PRODUCTO</h2>
         <br />
 
         {products.map((product, index) => (
@@ -27,21 +27,21 @@ const OrderSummary = () => {
 
         <div className="order-summary__row">
           <div className="order-summary__item-name">
-            <h3 className="order-summary__label">Subtotal</h3>
+            <h3>Subtotal</h3>
           </div>
           <div className="order-summary__item-price">{subtotal}€</div>
         </div>
 
         <div className="order-summary__row">
           <div className="order-summary__item-name">
-            <h3 className="order-summary__label">Envío</h3>
+            <h3>Envío</h3>
           </div>
           <div className="order-summary__item-price">{shippingCost}€</div>
         </div>
 
         <div className="order-summary__row order-summary__row--total">
           <div className="order-summary__item-name">
-            <h2 className="order-summary__total-label">TOTAL</h2>
+            <h2>TOTAL</h2>
           </div>
           <div className="order-summary__item-price">{total}€</div>
         </div>

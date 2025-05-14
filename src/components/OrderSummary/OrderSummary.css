@@ -1,18 +1,17 @@
 .order-summary {
   flex: 1;
   min-width: 280px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--input-border);
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--form-background);
   height: fit-content;
 }
 
-
-.order-summary__title {
-  font-size: 20px;
+.order-summary h2{
+   font-size: 20px;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -22,61 +21,27 @@
   gap: 10px;
 }
 
-.order-summary__subtitle {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #555;
-}
-
 .order-summary__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.order-summary__item-name {
+.order-summary__item-name,
+.order-summary__item-price {
   font-size: 14px;
-  color: #555;
+  color: var(--text-color);
 }
 
 .order-summary__item-price {
-  font-size: 14px;
-  color: #555;
   text-align: right;
-}
-
-.order-summary__label {
-  font-size: 14px;
-  font-weight: normal;
-  margin: 0;
-}
-
-.order-summary__total-label {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
 }
 
 .order-summary__row--total .order-summary__item-price {
   font-weight: bold;
-  color: #007bff;
-}
-
-/* Bonus: botón para confirmar (opcional) */
-.order-summary-confirm-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 12px 0;
-  width: 100%;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 20px;
+  color: var(--link-color);
 }
 
 .order-summary-confirm-button:hover {
-  background-color: #0056b3;
+  background-color: var(--link-hover-color, #0056b3);
 }

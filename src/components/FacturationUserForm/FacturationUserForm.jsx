@@ -3,8 +3,6 @@ import "./FacturationUserForm.css";
 function FacturationUserForm() {
   return (
     <form className="facturation-form">
-      <h2 className="facturation-form__title">DETALLES DE FACTURACIÓN</h2>
-
       <div className="facturation-form__row">
         <label className="facturation-form__label">
           Nombre:
