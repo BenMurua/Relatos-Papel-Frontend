@@ -1,14 +1,21 @@
 import "./BookCard.css";
+import { useState } from "react";
 import { useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
 
 const BookCard = ({ id, bookImage, title, author, price }) => {
-  const { addBookToCart } = useContext(BookCardContext);
+  const [bookQuantity, setBookQuantity] = useState(0);
+  const handleQuantityChange = (newQuantity) => {
+    setBookQuantity(newQuantity);
+  };
+
+  const { addBook } = useContext(BookCardContext);
 
   const handleAddToCart = () => {
-    const book = { id: id, quantity: author };
-    addBookToCart(book);
+    console.log("Cantidad seleccionada:", bookQuantity);
+    const book = { id: id, quantity: bookQuantity };
+    addBook(book);
   };
 
   return (
@@ -23,7 +30,11 @@ const BookCard = ({ id, bookImage, title, author, price }) => {
         {" "}
         Add to cart{" "}
       </button>
-      <QuantitySelector className="quantity__selector"></QuantitySelector>
+      <QuantitySelector
+        quantity={bookQuantity}
+        className="quantity__selector"
+        handleQuantityChange={handleQuantityChange}
+      ></QuantitySelector>
     </div>
   );
 };

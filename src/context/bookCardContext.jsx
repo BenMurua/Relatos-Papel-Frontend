@@ -2,21 +2,40 @@ import { createContext, useState, useEffect } from "react";
 
 export const BookCardContext = createContext();
 export const BookCardProvider = ({ children }) => {
-  const [bookCard, setBookCard] = useState(
-    localStorage.getItem("app-bookCard") || []
-  );
+  const [bookList, setBookList] = useState([]);
+  //localStorage.getItem("app-bookList") || []
 
-  useEffect(() => {
+  /*   useEffect(() => {
     localStorage.setItem("app-bookCard", JSON.stringify(bookCard));
-  }, [bookCard]);
+  }, [bookCard]); */
 
   //Funcion para añadir libros al carrito
-  const addBookToCart = (book) => {
-    setBookCard((prevBookCard) => [...prevBookCard, book]);
+  const addBook = (book) => {
+    const bookToUpdate = bookList.find((item) => item.id === book.id);
+    if (bookToUpdate) {
+      const updatedBookList = bookList.map((item) =>
+        item.id === bookToUpdate.id
+          ? { ...item, quantity: bookToUpdate.quantity + book.quantity }
+          : item
+      );
+      setBookList(updatedBookList);
+    } else {
+      if (book.quantity != 0) {
+        setBookList((prev) => [...prev, newBook]);
+        const newBook = { ...book, quantity: book.quantity };
+      }
+    }
+  };
+
+  const deleteBook = (bookToDelete) => {
+    const updatedBookList = bookList.filter(
+      (book) => book.id !== bookToDelete.id
+    );
+    setBookList(updatedBookList);
   };
 
   return (
-    <BookCardContext.Provider value={{ bookCard, addBookToCart }}>
+    <BookCardContext.Provider value={{ bookList, addBook, deleteBook }}>
       {children}
     </BookCardContext.Provider>
   );
