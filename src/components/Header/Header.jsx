@@ -28,7 +28,7 @@ const Header = () => {
         <span className="logo-text">Relatos de papel</span>
       </div>
 
-      <nav className="nav-links">
+      <div className="cart-container">
         <button
           onClick={toggleTheme}
           className="theme-toggle"
@@ -38,10 +38,7 @@ const Header = () => {
         >
           <span className="material-symbols-outlined">contrast</span>
         </button>
-      </nav>
-
-      <div className="cart-container">
-        <img className="cart" src={cartSrc} alt="Cart" />{" "}
+        <img className="cart" src={cartSrc} alt="Cart" />
       </div>
     </header>
   );
