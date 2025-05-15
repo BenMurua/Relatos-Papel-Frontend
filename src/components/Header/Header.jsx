@@ -9,6 +9,7 @@ import { ThemeContext } from "../../context/themeContext";
 import { BookCardContext } from "../../context/bookCardContext";
 import { THEMES } from "../../models/constants";
 import CartPopup from "../CartPopup/CartPopup";
+import { RoutesValues } from "../../models/RoutesValues";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -20,7 +21,7 @@ const Header = () => {
   const cartSrc = theme === THEMES.LIGHT ? cartDark : cartLight;
 
   const handleLogoClick = () => {
-    navigate("/app");
+    navigate(RoutesValues.app);
   };
 
   const handleCartClick = () => {
