@@ -3,7 +3,10 @@
     margin:0;
     font-family: 'Roboto';
 }
-
+body{
+  background: var(--background-gradient);
+  overflow-x:hidden;
+}
 :root {
   --background-gradient: linear-gradient(90deg, #ffffff, #f7f7f7);
   --text-color: #000000;
