@@ -11,6 +11,7 @@ const BookGrid = () => {
       {books.map((book, index) => (
         <BookCard
           key={index}
+          id={book.id}
           bookImage={book.image}
           title={book.title}
           author={book.author}

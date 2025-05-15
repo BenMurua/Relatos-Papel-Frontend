@@ -1,7 +1,23 @@
 import "./BookCard.css";
+import { useState } from "react";
+import { useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
+import { BookCardContext } from "../../context/bookCardContext.jsx";
 
-const BookCard = ({ bookImage, title, author, price }) => {
+const BookCard = ({ id, bookImage, title, author, price }) => {
+  const [bookQuantity, setBookQuantity] = useState(0);
+  const handleQuantityChange = (newQuantity) => {
+    setBookQuantity(newQuantity);
+  };
+
+  const { addBook } = useContext(BookCardContext);
+
+  const handleAddToCart = () => {
+    console.log("Cantidad seleccionada:", bookQuantity);
+    const book = { id: id, quantity: bookQuantity };
+    addBook(book);
+  };
+
   return (
     <div className="book__card">
       <img src={bookImage} className="book__image"></img>
@@ -10,8 +26,15 @@ const BookCard = ({ bookImage, title, author, price }) => {
       <h4> {author}</h4>
       <h4> {price}€ </h4>
 
-      <button className="add__cart"> Add to cart </button>
-      <QuantitySelector className="quantity__selector"></QuantitySelector>
+      <button onClick={handleAddToCart} className="add__cart">
+        {" "}
+        Add to cart{" "}
+      </button>
+      <QuantitySelector
+        quantity={bookQuantity}
+        className="quantity__selector"
+        handleQuantityChange={handleQuantityChange}
+      ></QuantitySelector>
     </div>
   );
 };

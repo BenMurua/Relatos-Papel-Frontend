@@ -1,12 +1,23 @@
+import { useState } from "react";
 import "./QuantitySelector.css";
 
-function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
+function QuantitySelector({ quantity, handleQuantityChange }) {
+  const onIncrease = () => {
+    quantity++;
+    handleQuantityChange(quantity);
+  };
+
+  const onDecrease = () => {
+    quantity--;
+    handleQuantityChange(quantity);
+  };
+
   const handleInputChange = (e) => {
     const value = parseInt(e.target.value, 10);
     if (!isNaN(value) && value >= 1) {
-      onQuantitySet(value);
+      quantity = value;
     } else if (e.target.value === "") {
-      onQuantitySet(1);
+      quantity = 1;
     }
   };
 
@@ -14,7 +25,7 @@ function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
     <div className="quantity-selector">
       <button
         onClick={onDecrease}
-        disabled={quantity <= 1}
+        disabled={quantity === 0}
         aria-label="Reducir cantidad"
       >
         -
@@ -23,15 +34,7 @@ function QuantitySelector({ quantity, onIncrease, onDecrease, onQuantitySet }) {
         type="number"
         value={quantity}
         onChange={handleInputChange}
-        onBlur={(e) => {
-          if (
-            parseInt(e.target.value, 10) < 1 ||
-            isNaN(parseInt(e.target.value, 10))
-          ) {
-            onQuantitySet(1);
-          }
-        }}
-        min="1"
+        min="0"
         className="quantity-input"
         aria-label="Cantidad"
       />
