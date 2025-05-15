@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const BookCardContext = createContext();
 export const BookCardProvider = ({ children }) => {
@@ -21,15 +21,19 @@ export const BookCardProvider = ({ children }) => {
     }
   };
 
-  const deleteBook = (bookToDelete) => {
-    const updatedBookList = bookList.filter(
-      (book) => book.id !== bookToDelete.id
-    );
+  const deleteBook = (bookId) => {
+    const updatedBookList = bookList.filter((book) => book.id !== bookId);
+    setBookList(updatedBookList);
+  };
+
+  const updatedBookList = (updatedBookList) => {
     setBookList(updatedBookList);
   };
 
   return (
-    <BookCardContext.Provider value={{ bookList, addBook, deleteBook }}>
+    <BookCardContext.Provider
+      value={{ bookList, addBook, deleteBook, updatedBookList }}
+    >
       {children}
     </BookCardContext.Provider>
   );

@@ -1,38 +1,49 @@
-import React, { useState, useEffect } from "react";
 import CartItemsList from "../../components/CartItemList/CartItemList";
-import "./CartDetail.css";
 import OrderResume from "../../components/OrderResume/OrderResume";
 import { getAllBooks } from "../../utils/BookUtils";
+import { useState, useContext } from "react";
+import { BookCardContext } from "../../context/bookCardContext.jsx";
+import { useNavigate } from "react-router-dom";
+import { RoutesValues } from "../../models/RoutesValues.js";
+import "./CartDetail.css";
 
 function CartDetail() {
-  //this must be received from the context
-  const initialItems = getAllBooks();
-  const [cartItems, setCartItems] = useState(initialItems);
   const title = "Resumen del carrito";
-  const handleQuantityChange = (itemId, newQuantity) => {
-    if (newQuantity < 1) return;
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
+  const navigate = useNavigate();
+  const { bookList, updatedBookList, deleteBook } = useContext(BookCardContext);
 
-  const handleRemoveItem = (itemId) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
-  };
+  const booksData = getAllBooks();
 
-  const calculateTotalPrice = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  };
+  const books = bookList
+    .map(({ id, quantity }) => {
+      const bookUpdated = booksData.find((book) => book.id === id);
+      return bookUpdated ? { ...bookUpdated, quantity } : null;
+    })
+    .filter(Boolean);
 
-  const totalPrice = calculateTotalPrice();
+  const [bookListState, setBookListState] = useState(books);
 
   const handleConfirmPayment = () => {
-    alert(`Procediendo al pago. Total: ${totalPrice}€`);
+    navigate(RoutesValues.checkout);
+  };
+
+  const onBookUpdate = (book) => {
+    const bookList = bookListState
+      .map((item) => {
+        if (item.id === book.id) {
+          return { ...item, quantity: book.quantity };
+        }
+        return item;
+      })
+      .filter((item) => item.quantity > 0);
+    setBookListState(bookList);
+    updatedBookList(bookList);
+  };
+
+  const onRemoveitem = (id) => {
+    const updatedBookList = bookListState.filter((item) => item.id !== id);
+    deleteBook(id);
+    setBookListState(updatedBookList);
   };
 
   return (
@@ -40,19 +51,18 @@ function CartDetail() {
       <h1>{title}</h1>
       <div className="cart-layout">
         <CartItemsList
-          items={cartItems}
-          onQuantityChange={handleQuantityChange}
-          onRemoveItem={handleRemoveItem}
+          items={bookListState}
+          onBookUpdate={onBookUpdate}
+          onRemoveItem={onRemoveitem}
         />
-        {cartItems.length > 0 && (
+        {bookListState.length > 0 && (
           <OrderResume
-            totalPrice={totalPrice}
-            items={cartItems} // Para mostrar los nombres en el resumen
+            items={bookListState}
             onConfirmPayment={handleConfirmPayment}
           />
         )}
       </div>
-      {cartItems.length === 0 && <p>Tu carrito está vacío.</p>}
+      {bookListState.length === 0 && <p>Tu carrito está vacío.</p>}
     </div>
   );
 }

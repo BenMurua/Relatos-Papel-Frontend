@@ -1,7 +1,7 @@
 import CartItem from "../CartItem/CartItem";
 import "./CartItemList.css";
 
-function CartItemsList({ items, onQuantityChange, onRemoveItem }) {
+function CartItemsList({ items, onBookUpdate, onRemoveItem }) {
   if (!items || items.length === 0) {
     return null;
   }
@@ -12,7 +12,7 @@ function CartItemsList({ items, onQuantityChange, onRemoveItem }) {
         <CartItem
           key={item.id}
           item={item}
-          onQuantityChange={onQuantityChange}
+          onBookUpdate={onBookUpdate}
           onRemoveItem={onRemoveItem}
         />
       ))}

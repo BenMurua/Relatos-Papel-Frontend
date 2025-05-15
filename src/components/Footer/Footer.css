@@ -1,5 +1,4 @@
 .footer__main {
-  width: 100%;
   background: var(--form-background);
   color: var(--text-color);
   display: flex;
@@ -7,7 +6,7 @@
   align-items: center;
   padding: 2.2rem 1rem 1.2rem 1rem;
   border-top: 1px solid var(--form-border);
-  box-shadow: 0 -2px 16px rgba(0,0,0,0.06);
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.06);
   gap: 1.2rem;
   transition: background 0.3s, color 0.3s;
 }
@@ -45,7 +44,7 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
 }
 
 .label {
