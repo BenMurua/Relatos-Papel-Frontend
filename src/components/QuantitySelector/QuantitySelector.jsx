@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./QuantitySelector.css";
 
 function QuantitySelector({ quantity, handleQuantityChange }) {

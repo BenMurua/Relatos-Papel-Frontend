@@ -33,7 +33,14 @@ const Header = () => {
         >
           <span className="material-symbols-outlined">contrast</span>
         </button>
-        <img className="header__cart" src={cartSrc} alt="Cart" />
+        <button
+          className="theme-toggle"
+          aria-label={`Cambiar a ${
+            theme === THEMES.LIGHT ? "modo oscuro" : "modo claro"
+          }`}
+        >
+          <img className="header__cart" src={cartSrc} alt="Cart" />
+        </button>
       </div>
     </header>
   );

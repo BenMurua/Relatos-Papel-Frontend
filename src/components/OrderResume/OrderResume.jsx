@@ -1,6 +1,12 @@
 import "./OrderResume.css";
 
-function OrderResume({ totalPrice, items, onConfirmPayment }) {
+function OrderResume({ items, onConfirmPayment }) {
+  const calculateTotalPrice = () => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  const totalPrice = calculateTotalPrice();
+
   return (
     <aside className="order">
       <h2 className="order__title">Compra total</h2>
@@ -13,7 +19,7 @@ function OrderResume({ totalPrice, items, onConfirmPayment }) {
         ))}
       </ul>
       <button onClick={onConfirmPayment} className="order__button">
-        Confirmar pago
+        Ir a pagar
       </button>
     </aside>
   );
