@@ -4,7 +4,7 @@ import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { RoutesValues } from "../../models/RoutesValues.js";
-const BookCard = ({ id, bookImage, title, author, price }) => {
+const BookCard = ({ id, bookImage, title, author, price, description }) => {
   const navigate = useNavigate();
   const [bookQuantity, setBookQuantity] = useState(0);
   const { addBook } = useContext(BookCardContext);
@@ -13,9 +13,22 @@ const BookCard = ({ id, bookImage, title, author, price }) => {
     setBookQuantity(newQuantity);
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
     const book = { id: id, quantity: bookQuantity };
     addBook(book);
+  };
+
+  const navigatetobookdetail = () => {
+    const book = {
+      id: id,
+      title: title,
+      bookImage: bookImage,
+      author: author,
+      price: price,
+      description: description,
+    };
+    navigate(RoutesValues.bookDetail, { state: { selectedBook: book } });
   };
 
   //MOMENTANEO, HASTA QUE TENGAMOS EL BOTON EN EL POP UP DE ADRIAN PARA NAVEGAR A LA VISTA DETALLADA DEL CARRITO
@@ -24,7 +37,7 @@ const BookCard = ({ id, bookImage, title, author, price }) => {
     navigate(RoutesValues.cart);
   };
   return (
-    <div className="book-card">
+    <div onClick={navigatetobookdetail} className="book-card">
       <img src={bookImage} alt={title} className="book-card__image" />
       <button onClick={navigateToCart}>x</button>
       <h3 className="book-card__title">{title}</h3>
