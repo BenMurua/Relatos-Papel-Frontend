@@ -2,10 +2,20 @@ import "./Checkout.css";
 import OrderSummary from "../../components/OrderSummary/OrderSummary";
 import PaymentMethod from "../../components/PaymentMethod/PaymentMethod";
 import FacturationUserForm from "../../components/FacturationUserForm/FacturationUserForm";
+import { useContext } from "react";
+import { BookCardContext } from "../../context/bookCardContext.jsx";
+import { useNavigate } from "react-router-dom";
+import { RoutesValues } from "../../models/RoutesValues";
 
 const Checkout = () => {
+  const { updatedBookList } = useContext(BookCardContext);
+  const navigate = useNavigate();
+
   const handleFinishPayment = () => {
     alert("Pago realizado con éxito");
+    updatedBookList([]);
+    localStorage.removeItem("bookList");
+    navigate(RoutesValues.app);
   };
 
   return (
@@ -16,11 +26,9 @@ const Checkout = () => {
       </div>
       <div className="checkout__right">
         <div className="checkout__summary">
-          <h2 className="checkout__subtitle">Resumen del pedido</h2>
           <OrderSummary />
         </div>
         <div className="checkout__payment">
-          <h2 className="checkout__subtitle">Método de pago</h2>
           <PaymentMethod onFinishPayment={handleFinishPayment} />
         </div>
       </div>
