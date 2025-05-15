@@ -45,3 +45,12 @@
 .order-summary-confirm-button:hover {
   background-color: var(--link-hover-color, #0056b3);
 }
+
+.order-summary__select {
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--input-border);
+  background-color: var(--form-background);
+  color: var(--text-color);
+  font-size: 14px;
+}

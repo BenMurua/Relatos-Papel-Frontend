@@ -7,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Lado izquierdo: formulario */
 .checkout__left {
   flex: 3;
   background-color: var(--form-background);
@@ -17,7 +16,6 @@
   overflow-y: auto;
 }
 
-/* Lado derecho: resumen + pago */
 .checkout__right {
   flex: 2;
   display: flex;
@@ -25,7 +23,6 @@
   gap: 20px;
 }
 
-/* Resumen de pedido y método de pago */
 .checkout__summary,
 .checkout__payment {
   background-color: var(--form-background);
@@ -44,7 +41,6 @@
   flex: 1;
 }
 
-/* Títulos */
 .checkout__title {
   font-size: 24px;
   font-weight: bold;

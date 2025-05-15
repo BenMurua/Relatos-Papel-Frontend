@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CartItemsList from "../../components/CartItemList/CartItemList";
 import "./CartDetail.css";
 import OrderResume from "../../components/OrderResume/OrderResume";
 import { getAllBooks } from "../../utils/BookUtils";
 
 function CartDetail() {
-  //this must be received from the context
   const initialItems = getAllBooks();
   const [cartItems, setCartItems] = useState(initialItems);
   const title = "Resumen del carrito";
+
   const handleQuantityChange = (itemId, newQuantity) => {
     if (newQuantity < 1) return;
     setCartItems((prevItems) =>
@@ -36,9 +36,9 @@ function CartDetail() {
   };
 
   return (
-    <div className="shopping-cart-container">
+    <div className="cart-detail">
       <h1>{title}</h1>
-      <div className="cart-layout">
+      <div className="cart-detail__layout">
         <CartItemsList
           items={cartItems}
           onQuantityChange={handleQuantityChange}
@@ -47,7 +47,7 @@ function CartDetail() {
         {cartItems.length > 0 && (
           <OrderResume
             totalPrice={totalPrice}
-            items={cartItems} // Para mostrar los nombres en el resumen
+            items={cartItems}
             onConfirmPayment={handleConfirmPayment}
           />
         )}
