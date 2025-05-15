@@ -1,21 +1,18 @@
-import { useState } from "react";
-import Books from "../../assets/data/Books";
+import { useContext, useState } from "react";
+import { BookCardContext } from "../../context/bookCardContext";
+import { getAllBooks } from "../../utils/BookUtils";
 import "./OrderSummary.css";
 
 const OrderSummary = () => {
-  const simulatedCart = [
-    { id: 0, quantity: 2 },
-    { id: 2, quantity: 1 },
-    { id: 4, quantity: 7 },
-  ];
+  const { bookList } = useContext(BookCardContext);
+  const booksData = getAllBooks();
 
-  const products = simulatedCart.map((item) => {
-    const book = Books.find((b) => b.id === item.id);
-    return {
-      ...book,
-      quantity: item.quantity,
-    };
-  });
+  const products = bookList
+    .map(({ id, quantity }) => {
+      const book = booksData.find((b) => b.id === id);
+      return book ? { ...book, quantity } : null;
+    })
+    .filter(Boolean);
 
   const subtotal = products.reduce(
     (sum, product) => sum + product.price * product.quantity,
@@ -23,8 +20,8 @@ const OrderSummary = () => {
   );
 
   const shippingOptions = {
-    standard: { label: "Estándar (3-5 días)", cost: 5 },
-    express: { label: "Exprés (24-48h)", cost: 10 },
+    standard: { label: "Estándar (3-5 días)", cost: 4.99 },
+    express: { label: "Exprés (24-48h)", cost: 9.99 },
     pickup: { label: "Recogida en tienda", cost: 0 },
   };
 
@@ -59,7 +56,6 @@ const OrderSummary = () => {
           </div>
         </div>
 
-        {/* Selección de envío */}
         <div className="order-summary__row">
           <div className="order-summary__item-name">
             <h3>Envío</h3>
