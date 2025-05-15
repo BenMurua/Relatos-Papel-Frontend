@@ -1,9 +1,9 @@
 import "./PaymentMethod.css";
 
-const PaymentMethod = () => {
+const PaymentMethod = ({ onFinishPayment }) => {
   return (
     <div className="payment-method">
-      <form className="payment-method-form">
+      <form className="payment-method__form">
         <fieldset className="payment-method__fieldset">
           <legend className="payment-method__legend">
             <h2 className="payment-method__title">MÉTODO DE PAGO</h2>
@@ -49,6 +49,13 @@ const PaymentMethod = () => {
           </div>
         </fieldset>
       </form>
+
+      <button
+        onClick={onFinishPayment}
+        className="payment-method__finish-button"
+      >
+        Finalizar pago
+      </button>
     </div>
   );
 };

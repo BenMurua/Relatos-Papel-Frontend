@@ -8,7 +8,7 @@ function CartItemsList({ items, onQuantityChange, onRemoveItem }) {
   }
 
   return (
-    <section className="cart-items-list" aria-label="Artículos en el carrito">
+    <section className="cart-items" aria-label="Artículos en el carrito">
       {items.map((item) => (
         <CartItem
           key={item.id}

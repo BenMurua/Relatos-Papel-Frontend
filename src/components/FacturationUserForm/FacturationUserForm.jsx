@@ -3,59 +3,76 @@ import "./FacturationUserForm.css";
 function FacturationUserForm() {
   return (
     <form className="facturation-form">
-      <h2 className="facturation-form__title">DETALLES DE FACTURACIÓN</h2>
-
       <div className="facturation-form__row">
         <label className="facturation-form__label">
           Nombre:
           <input
-            className="facturation-form__input"
             type="text"
             name="firstName"
+            className="facturation-form__input"
+            placeholder="Introduce tu nombre"
           />
         </label>
 
         <label className="facturation-form__label">
           Apellidos:
           <input
-            className="facturation-form__input"
             type="text"
             name="lastName"
+            className="facturation-form__input"
+            placeholder="Introduce tus apellidos"
           />
         </label>
       </div>
 
       <label className="facturation-form__label">
-        Nombre de la empresa (opcional):
+        Empresa (opcional):
         <input
-          className="facturation-form__input"
           type="text"
           name="companyName"
+          className="facturation-form__input"
+          placeholder="Nombre de la empresa"
         />
       </label>
 
       <label className="facturation-form__label">
         Dirección:
-        <input className="facturation-form__input" type="text" name="address" />
+        <input
+          type="text"
+          name="address"
+          className="facturation-form__input"
+          placeholder="Calle, número, piso..."
+        />
       </label>
 
       <label className="facturation-form__label">
         Código Postal:
         <input
-          className="facturation-form__input"
           type="text"
           name="postalCode"
+          className="facturation-form__input"
+          placeholder="Ej: 28001"
         />
       </label>
 
       <label className="facturation-form__label">
         Localidad/Ciudad:
-        <input className="facturation-form__input" type="text" name="city" />
+        <input
+          type="text"
+          name="city"
+          className="facturation-form__input"
+          placeholder="Ciudad o localidad"
+        />
       </label>
 
       <label className="facturation-form__label">
         Teléfono:
-        <input className="facturation-form__input" type="tel" name="phone" />
+        <input
+          type="tel"
+          name="phone"
+          className="facturation-form__input"
+          placeholder="Número de contacto"
+        />
       </label>
     </form>
   );

@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.home__filters {
+  gap: 2rem;
+}
+
+.home__content {
+  flex: 1;
+}

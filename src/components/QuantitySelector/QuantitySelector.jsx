@@ -3,29 +3,30 @@ import "./QuantitySelector.css";
 
 function QuantitySelector({ quantity, handleQuantityChange }) {
   const onIncrease = () => {
-    quantity++;
-    handleQuantityChange(quantity);
+    handleQuantityChange(quantity + 1);
   };
 
   const onDecrease = () => {
-    quantity--;
-    handleQuantityChange(quantity);
+    if (quantity > 0) {
+      handleQuantityChange(quantity - 1);
+    }
   };
 
   const handleInputChange = (e) => {
     const value = parseInt(e.target.value, 10);
-    if (!isNaN(value) && value >= 1) {
-      quantity = value;
+    if (!isNaN(value) && value >= 0) {
+      handleQuantityChange(value);
     } else if (e.target.value === "") {
-      quantity = 1;
+      handleQuantityChange(0);
     }
   };
 
   return (
-    <div className="quantity-selector">
+    <div className="qty">
       <button
         onClick={onDecrease}
         disabled={quantity === 0}
+        className="qty__button qty__button--decrease"
         aria-label="Reducir cantidad"
       >
         -
@@ -35,10 +36,14 @@ function QuantitySelector({ quantity, handleQuantityChange }) {
         value={quantity}
         onChange={handleInputChange}
         min="0"
-        className="quantity-input"
+        className="qty__input"
         aria-label="Cantidad"
       />
-      <button onClick={onIncrease} aria-label="Aumentar cantidad">
+      <button
+        onClick={onIncrease}
+        className="qty__button qty__button--increase"
+        aria-label="Aumentar cantidad"
+      >
         +
       </button>
     </div>

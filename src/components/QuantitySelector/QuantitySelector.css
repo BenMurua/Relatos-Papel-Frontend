@@ -1,43 +1,56 @@
-.quantity-selector {
+.qty {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
+  background-color: var(--form-background);
+  transition: all 0.3s ease;
 }
 
-.quantity-selector button {
-  background-color: #f0f0f0;
+.qty__button {
+  background-color: var(--button-background);
   border: none;
-  color: #333;
+  color: var(--text-color);
   padding: 8px 12px;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.2s ease;
 }
-.quantity-selector button:first-child {
-  border-right: 1px solid #ccc;
+
+.qty__button--decrease {
+  border-right: 1px solid var(--border-color);
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.quantity-selector button:last-child {
-  border-left: 1px solid #ccc;
+
+.qty__button--increase {
+  border-left: 1px solid var(--border-color);
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
 
-.quantity-selector button:disabled {
+.qty__button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background-color: var(--button-disabled);
 }
 
-.quantity-input {
+.qty__button:hover:not(:disabled) {
+  background-color: var(--button-hover);
+}
+
+.qty__input {
   width: 40px;
   text-align: center;
   border: none;
   font-size: 14px;
   padding: 8px 0;
+  color: var(--text-color);
+  background-color: transparent;
 }
-.quantity-input::-webkit-outer-spin-button,
-.quantity-input::-webkit-inner-spin-button {
+
+.qty__input::-webkit-outer-spin-button,
+.qty__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
