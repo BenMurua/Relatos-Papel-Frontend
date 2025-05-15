@@ -14,8 +14,9 @@ const Checkout = () => {
   const handleFinishPayment = () => {
     alert("Pago realizado con éxito");
     updatedBookList([]);
-    localStorage.removeItem("bookList");
-    navigate(RoutesValues.app);
+    setTimeout(() => {
+      navigate(RoutesValues.app);
+    }, 2000);
   };
 
   return (
