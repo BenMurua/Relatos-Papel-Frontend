@@ -1,4 +1,4 @@
-.order-summary {
+.order {
   flex: 1;
   min-width: 280px;
   border: 1px solid #e0e0e0;
@@ -8,13 +8,13 @@
   height: fit-content;
 }
 
-.order-summary h2 {
+.order__title {
   font-size: 20px;
   margin-bottom: 15px;
   color: #333;
 }
 
-.order-summary-total-price {
+.order__total {
   font-size: 36px;
   font-weight: bold;
   color: #333;
@@ -22,18 +22,19 @@
   text-align: right;
 }
 
-.order-summary-items-list {
+.order__items {
   list-style: none;
   padding: 0;
   margin: 0 0 20px 0;
   font-size: 14px;
   color: #555;
 }
-.order-summary-items-list li {
+
+.order__item {
   padding: 2px 0;
 }
 
-.order-summary-confirm-button {
+.order__button {
   background-color: #007bff;
   color: white;
   border: none;
@@ -46,6 +47,6 @@
   transition: background-color 0.2s;
 }
 
-.order-summary-confirm-button:hover {
+.order__button:hover {
   background-color: #0056b3;
 }

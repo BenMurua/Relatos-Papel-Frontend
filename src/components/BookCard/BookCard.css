@@ -1,102 +1,88 @@
-.book__card {
-    width: 100%; /* Cambiado de 300px a 100% */
-    max-width: 340px; /* Opcional: limita el ancho máximo */
-    min-height: 380px;
-    background: var(--form-background);
-    border: 1px solid var(--form-border);
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    padding: 1.5rem 1rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto; /* Centra la carta en su celda */
-    transition: box-shadow 0.3s, background 0.3s, border 0.3s;
-}
-.book__card:hover {
-    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
-    background: var(--option-hover);
+.book-card {
+  width: 100%;
+  max-width: 340px;
+  min-height: 380px;
+  background: var(--form-background);
+  border: 1px solid var(--form-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  transition: box-shadow 0.3s, background 0.3s, border 0.3s;
 }
 
-.book__image {
-    width: 120px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--form-border);
-    margin-bottom: 1rem;
-    background: var(--input-background);
-    transition: border 0.2s;
+.book-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  background: var(--option-hover);
 }
 
-.book__card h3 {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0.5rem 0 0.2rem 0;
-    text-align: center;
+.book-card__image {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--form-border);
+  margin-bottom: 1rem;
+  background: var(--input-background);
+  transition: border 0.2s;
 }
 
-.book__card h4 {
-    color: var(--subtext-color);
-    font-size: 1rem;
-    font-weight: normal;
-    margin: 0.1rem 0;
-    text-align: center;
+.book-card__title {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.2rem;
+  text-align: center;
 }
 
-.add__cart {
-    background-color: var(--button-background);
-    color: var(--button-color);
-    border: none;
-    border-radius: 4px;
-    width: 80%;
-    height: 2.2rem;
-    margin: 0.7rem 0 0.5rem 0;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+.book-card__author,
+.book-card__price {
+  color: var(--subtext-color);
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0.1rem 0;
+  text-align: center;
 }
 
-.add__cart:hover {
-    background-color: var(--button-hover);
-    color: var(--text-color);
+.book-card__button {
+  background-color: var(--button-background);
+  color: var(--button-color);
+  border: none;
+  border-radius: 4px;
+  width: 80%;
+  height: 2.2rem;
+  margin: 0.7rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.quantity__selector {
-    width: 100%;
-    margin-top: 0.3rem;
-    display: flex;
-    justify-content: center;
+.book-card__button:hover {
+  background-color: var(--button-hover);
+  color: var(--text-color);
 }
 
-.quantity__selector button {
-    background-color: var(--form-background);
-    color: var(--text-color);
-    border: 1px solid var(--form-border);
-    border-radius: 2px;
-    margin: 0 0.2rem;
-    padding: 0.2rem 0.7rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-}
-
-.quantity__selector button:hover {
-    background-color: var(--option-hover);
-    color: var(--button-background);
+.book-card__quantity-selector {
+  width: 100%;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
-    .book__card {
-        width: 95%;
-        min-height: 320px;
-        padding: 1rem;
-    }
-    .book__image {
-        width: 90px;
-        height: 130px;
-    }
+  .book-card {
+    width: 95%;
+    min-height: 320px;
+    padding: 1rem;
+  }
+
+  .book-card__image {
+    width: 90px;
+    height: 130px;
+  }
 }

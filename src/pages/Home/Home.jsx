@@ -3,6 +3,7 @@ import BookGrid from "../../components/BookGrid/BookGrid";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import FilterCheckBox from "../../components/FilterCheckBox/FilterCheckBox";
 import { getAllBooks, searchBooks } from "../../utils/BookUtils";
+import "./Home.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -33,15 +34,15 @@ const Home = () => {
   };
 
   return (
-    <div style={{ display: "flex", gap: "2rem", alignItems: "flex-start" }}>
-      <div>
+    <div className="home">
+      <div className="home__filters">
         <FilterCheckBox
           authors={authors}
           selectedAuthors={selectedAuthors}
           onChange={handleAuthorChange}
         />
       </div>
-      <div style={{ flex: 1 }}>
+      <div className="home__content">
         <SearchBar
           value={search}
           onChange={setSearch}

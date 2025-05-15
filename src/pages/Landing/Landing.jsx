@@ -32,8 +32,8 @@ const Landing = () => {
   }, [navigate]);
 
   return (
-    <div className="landing-container">
-      <h1 className="landing-text">
+    <div className="landing">
+      <h1 className="landing__text">
         Bienvenidos a Relatos de Papel, tu lugar de confianza para comprar todos
         los libros.
       </h1>

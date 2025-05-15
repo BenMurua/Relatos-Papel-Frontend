@@ -1,4 +1,4 @@
-.error-page {
+.route-error {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,21 +7,21 @@
   margin: 0;
   background-color: #001f3f;
   color: #ffffff;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 
-.error-page h1 {
+.route-error__title {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.error-page p {
+.route-error__message {
   font-size: 1.25rem;
   margin: 0.5rem 0;
 }
 
-.error-page i {
+.route-error__details {
   font-size: 1rem;
   opacity: 0.8;
 }

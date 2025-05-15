@@ -4,7 +4,7 @@ import "./BookGrid.css";
 
 const BookGrid = ({ books }) => {
   return (
-    <div className="book__grid">
+    <div className="book-grid">
       {books.map((book, index) => (
         <BookCard
           key={index}

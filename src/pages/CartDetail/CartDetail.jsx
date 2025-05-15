@@ -24,7 +24,7 @@ function CartDetail() {
   const [bookListState, setBookListState] = useState(books);
 
   const handleConfirmPayment = () => {
-    navigate(RoutesValues.checkout);
+    navigate(RoutesValues.app + "/" + RoutesValues.checkout);
   };
 
   const onBookUpdate = (book) => {
@@ -47,9 +47,9 @@ function CartDetail() {
   };
 
   return (
-    <div className="shopping-cart-container">
+    <div className="cart-detail">
       <h1>{title}</h1>
-      <div className="cart-layout">
+      <div className="cart-detail__layout">
         <CartItemsList
           items={bookListState}
           onBookUpdate={onBookUpdate}

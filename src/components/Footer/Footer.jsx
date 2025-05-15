@@ -7,27 +7,29 @@ import instagram_logo from "../../assets/Instagram.svg";
 
 export const Footer = () => {
   return (
-    <footer className="footer__main">
-      <img className="logo" src={logo} />
-      <span> @2025 Relatos de papel All Rights Reserved. </span>
+    <footer className="footer">
+      <img className="footer__logo" src={logo} alt="Relatos de papel logo" />
+      <span className="footer__info">
+        ©2025 Relatos de papel. Todos los derechos reservados.
+      </span>
       <div className="footer__right">
-        <div>
-          <img className="small__logo" src={email_logo} />
-          <a className="label" href="mailto:relatosdepapel@gmail.com">
+        <div className="footer__contact">
+          <img className="footer__icon" src={email_logo} alt="Email" />
+          <a className="footer__text" href="mailto:relatosdepapel@gmail.com">
             relatosdepapel@gmail.com
           </a>
         </div>
-        <div>
-          <img className="small__logo" src={location_logo} />
-          <span className="label"> Madrid, Calle Inventada 123</span>
+        <div className="footer__contact">
+          <img className="footer__icon" src={location_logo} alt="Ubicación" />
+          <span className="footer__text">Madrid, Calle Inventada 123</span>
         </div>
-        <div>
-          <img className="small__logo" src={phone_logo} />
-          <span className="label"> +34 123 456 789</span>
+        <div className="footer__contact">
+          <img className="footer__icon" src={phone_logo} alt="Teléfono" />
+          <span className="footer__text">+34 123 456 789</span>
         </div>
-        <div>
-          <img className="small__logo" src={instagram_logo} />
-          <span className="label"> Relatos de papel</span>
+        <div className="footer__contact">
+          <img className="footer__icon" src={instagram_logo} alt="Instagram" />
+          <span className="footer__text">Relatos de papel</span>
         </div>
       </div>
     </footer>
