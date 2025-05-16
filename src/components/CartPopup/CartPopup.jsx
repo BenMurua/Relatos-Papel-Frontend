@@ -2,7 +2,7 @@ import "./CartPopup.css";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { BookCardContext } from "../../context/bookCardContext";
-
+import { RoutesValues } from "../../models/RoutesValues.js";
 const CartPopup = ({ handleDelete, handleCartToggle }) => {
   const { bookList } = useContext(BookCardContext);
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ const CartPopup = ({ handleDelete, handleCartToggle }) => {
             className="button__popup"
             onClick={() => {
               handleCartToggle(false);
-              navigate("/app/cart");
+              navigate(RoutesValues.cart);
             }}
           >
             Ir al carrito
