@@ -1,27 +1,24 @@
 import "./BookCard.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { RoutesValues } from "../../models/RoutesValues.js";
 import { useOutletContext } from "react-router-dom";
+import { useBookCardQuantity } from "../../Hooks/Hooks.js";
+const BookCard = ({ id, bookImage, title, author, price, description }) => {
+  const navigate = useNavigate();
+  const { bookQuantity, handleQuantityChange } = useBookCardQuantity();
 
-const BookCard = ({ id, bookImage, title, author, price,description }) => {
-const navigate = useNavigate();
-  const [bookQuantity, setBookQuantity] = useState(0);
   const { addBook } = useContext(BookCardContext);
   const { toggleCart } = useOutletContext();
-
-  const handleQuantityChange = (newQuantity) => {
-    setBookQuantity(newQuantity);
-  };
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
     const book = { id: id, quantity: bookQuantity, title: title, price: price };
     addBook(book);
     handleQuantityChange(0);
-   if (book.quantity) {
+    if (book.quantity) {
       toggleCart(true);
     }
   };

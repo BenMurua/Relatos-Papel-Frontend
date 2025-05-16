@@ -34,9 +34,10 @@ function QuantitySelector({ quantity, handleQuantityChange }) {
         -
       </button>
       <input
-        type="number"
+        type="text"
         value={quantity}
         onChange={handleInputChange}
+        onClick={(e) => e.stopPropagation()}
         min="0"
         className="qty__input"
         aria-label="Cantidad"

@@ -1,16 +1,9 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
 import { Footer } from "../Footer/Footer";
-import { useState } from "react";
+import { useCart } from "../../Hooks/Hooks";
 const Layout = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const toggleCart = (newValue) => {
-    if (newValue === undefined) {
-      newValue = !isCartOpen;
-    }
-    setIsCartOpen(newValue);
-  };
+  const { isCartOpen, toggleCart } = useCart();
 
   return (
     <>
