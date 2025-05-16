@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { BookCardContext } from "../../context/bookCardContext";
 
-const CartPopup = ({ handleDelete }) => {
+const CartPopup = ({ handleDelete, handleCartToggle }) => {
   const { bookList } = useContext(BookCardContext);
   const navigate = useNavigate();
 
@@ -35,7 +35,10 @@ const CartPopup = ({ handleDelete }) => {
           </p>
           <button
             className="button__popup"
-            onClick={() => navigate("/app/cart")}
+            onClick={() => {
+              handleCartToggle(false);
+              navigate("/app/cart");
+            }}
           >
             Ir al carrito
           </button>
