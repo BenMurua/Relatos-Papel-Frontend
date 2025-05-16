@@ -42,10 +42,6 @@
   color: var(--link-color);
 }
 
-.order-summary-confirm-button:hover {
-  background-color: var(--link-hover-color, #0056b3);
-}
-
 .order-summary__select {
   padding: 4px;
   border-radius: 4px;

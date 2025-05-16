@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 340px;
   min-height: 380px;
+  max-height:440px;
   background: var(--form-background);
   border: 1px solid var(--form-border);
   border-radius: 12px;
