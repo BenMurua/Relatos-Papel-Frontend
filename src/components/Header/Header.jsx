@@ -1,16 +1,35 @@
 import "./Header.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logoLight from "../../assets/LogoWhite.svg";
 import logoDark from "../../assets/LogoBlack.svg";
 import cartLight from "../../assets/CartWhite.svg";
 import cartDark from "../../assets/CartBlack.svg";
 import { ThemeContext } from "../../context/themeContext";
+import { BookCardContext } from "../../context/bookCardContext";
 import { THEMES } from "../../models/constants";
+import CartPopup from "../CartPopup/CartPopup";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const { deleteBook } = useContext(BookCardContext);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const navigate = useNavigate();
+
   const logoSrc = theme === THEMES.LIGHT ? logoDark : logoLight;
   const cartSrc = theme === THEMES.LIGHT ? cartDark : cartLight;
+
+  const handleLogoClick = () => {
+    navigate("/app");
+  };
+
+  const handleCartClick = () => {
+    setIsCartOpen((prev) => !prev);
+  };
+
+  const handleDelete = (id) => {
+    deleteBook(id);
+  };
 
   return (
     <header
@@ -18,7 +37,11 @@ const Header = () => {
         theme === THEMES.DARK ? "header--dark" : "header--light"
       }`}
     >
-      <div className="header__logo">
+      <div
+        className="header__logo"
+        onClick={handleLogoClick}
+        style={{ cursor: "pointer" }}
+      >
         <img className="header__logo-image" src={logoSrc} alt="Logo" />
         <span className="header__logo-text">Relatos de papel</span>
       </div>
@@ -33,14 +56,18 @@ const Header = () => {
         >
           <span className="material-symbols-outlined">contrast</span>
         </button>
-        <button
-          className="theme-toggle"
-          aria-label={`Cambiar a ${
-            theme === THEMES.LIGHT ? "modo oscuro" : "modo claro"
-          }`}
-        >
-          <img className="header__cart" src={cartSrc} alt="Cart" />
-        </button>
+
+        <div className="header__cart-wrapper">
+          <button
+            onClick={handleCartClick}
+            className="theme-toggle"
+            aria-label="Abrir carrito"
+          >
+            <img className="header__cart" src={cartSrc} alt="Cart" />
+          </button>
+
+          {isCartOpen && <CartPopup handleDelete={handleDelete} />}
+        </div>
       </div>
     </header>
   );
