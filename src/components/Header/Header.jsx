@@ -58,7 +58,7 @@ const Header = ({ isCartOpen, onCartToggle }) => {
             onClick={() => {
               onCartToggle();
             }}
-            className="theme-toggle"
+            className="header__theme-toggle"
             aria-label="Abrir carrito"
           >
             <img className="header__cart" src={cartSrc} alt="Cart" />

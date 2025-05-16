@@ -14,23 +14,28 @@ const CartPopup = ({ handleDelete, handleCartToggle }) => {
 
   return (
     <div className="cart-dropdown">
-      <h3>Carrito</h3>
+      <h3 className="cart-dropdown__h3">Carrito</h3>
       {bookList.length === 0 ? (
-        <p>Tu carrito está vacío.</p>
+        <p className="cart-dropdown__p">Tu carrito está vacío.</p>
       ) : (
         <>
-          <ul>
+          <ul className="cart-dropdown__ul">
             {bookList.map((book) => (
-              <li key={book.id}>
+              <li className="cart-dropdown__li" key={book.id}>
                 {book.title} - Cantidad: {book.quantity}
                 <br />
                 {book.quantity} × {book.price} € ={" "}
                 {(book.quantity * book.price).toFixed(2)} €
-                <button onClick={() => handleDelete(book.id)}>Eliminar</button>
+                <button
+                  className="cart-dropdown__li__button"
+                  onClick={() => handleDelete(book.id)}
+                >
+                  Eliminar
+                </button>
               </li>
             ))}
           </ul>
-          <p>
+          <p className="cart-dropdown__p">
             <strong>Total: {totalCost.toFixed(2)} €</strong>
           </p>
           <button

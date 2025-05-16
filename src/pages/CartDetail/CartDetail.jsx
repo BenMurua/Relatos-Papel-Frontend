@@ -1,5 +1,5 @@
 import CartItemsList from "../../components/CartItemList/CartItemList";
-import OrderResume from "../../components/OrderResume/OrderResume";
+import CartResume from "../../components/CartResume/CartResume";
 import { getAllBooks } from "../../utils/BookUtils";
 import { useContext } from "react";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
@@ -43,7 +43,7 @@ function CartDetail() {
 
   return (
     <div className="cart-detail">
-      <h1>{title}</h1>
+      <h1 className="cart-detail__h1">{title}</h1>
       <div className="cart-detail__layout">
         <CartItemsList
           items={books}
@@ -51,7 +51,7 @@ function CartDetail() {
           onRemoveItem={onRemoveitem}
         />
         {books.length > 0 && (
-          <OrderResume items={books} onConfirmPayment={handleConfirmPayment} />
+          <CartResume items={books} onConfirmPayment={handleConfirmPayment} />
         )}
       </div>
       {books.length === 0 && <p>Tu carrito está vacío.</p>}

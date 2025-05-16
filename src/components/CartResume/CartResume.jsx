@@ -1,6 +1,6 @@
-import "./OrderResume.css";
+import "./CartResume.css";
 
-function OrderResume({ items, onConfirmPayment }) {
+function CartResume({ items, onConfirmPayment }) {
   const calculateTotalPrice = () => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
@@ -25,4 +25,4 @@ function OrderResume({ items, onConfirmPayment }) {
   );
 }
 
-export default OrderResume;
+export default CartResume;

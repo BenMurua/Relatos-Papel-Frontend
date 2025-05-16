@@ -4,20 +4,20 @@
   border: 1px solid #e0e0e0;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color:var(--form-background);
   height: fit-content;
 }
 
 .order__title {
   font-size: 20px;
   margin-bottom: 15px;
-  color: #333;
+  color: var(--text-color)
 }
 
 .order__total {
   font-size: 36px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 15px;
   text-align: right;
 }
@@ -27,7 +27,7 @@
   padding: 0;
   margin: 0 0 20px 0;
   font-size: 14px;
-  color: #555;
+  color: var(--text-color)
 }
 
 .order__item {
