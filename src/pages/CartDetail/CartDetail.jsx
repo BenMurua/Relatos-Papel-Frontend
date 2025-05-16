@@ -1,7 +1,7 @@
 import CartItemsList from "../../components/CartItemList/CartItemList";
 import OrderResume from "../../components/OrderResume/OrderResume";
 import { getAllBooks } from "../../utils/BookUtils";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { RoutesValues } from "../../models/RoutesValues.js";
@@ -21,14 +21,12 @@ function CartDetail() {
     })
     .filter(Boolean);
 
-  const [bookListState, setBookListState] = useState(books);
-
   const handleConfirmPayment = () => {
     navigate(RoutesValues.app + "/" + RoutesValues.checkout);
   };
 
   const onBookUpdate = (book) => {
-    const bookList = bookListState
+    const bookList = books
       .map((item) => {
         if (item.id === book.id) {
           return { ...item, quantity: book.quantity };
@@ -36,14 +34,11 @@ function CartDetail() {
         return item;
       })
       .filter((item) => item.quantity > 0);
-    setBookListState(bookList);
     updatedBookList(bookList);
   };
 
   const onRemoveitem = (id) => {
-    const updatedBookList = bookListState.filter((item) => item.id !== id);
     deleteBook(id);
-    setBookListState(updatedBookList);
   };
 
   return (
@@ -51,18 +46,15 @@ function CartDetail() {
       <h1>{title}</h1>
       <div className="cart-detail__layout">
         <CartItemsList
-          items={bookListState}
+          items={books}
           onBookUpdate={onBookUpdate}
           onRemoveItem={onRemoveitem}
         />
-        {bookListState.length > 0 && (
-          <OrderResume
-            items={bookListState}
-            onConfirmPayment={handleConfirmPayment}
-          />
+        {books.length > 0 && (
+          <OrderResume items={books} onConfirmPayment={handleConfirmPayment} />
         )}
       </div>
-      {bookListState.length === 0 && <p>Tu carrito está vacío.</p>}
+      {books.length === 0 && <p>Tu carrito está vacío.</p>}
     </div>
   );
 }
