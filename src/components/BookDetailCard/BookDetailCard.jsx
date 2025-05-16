@@ -20,9 +20,6 @@ const BookDetailCard = ({ selectedBook }) => {
     handleQuantityChange(0);
   };
 
-  //MOMENTANEO, HASTA QUE TENGAMOS EL BOTON EN EL POP UP DE ADRIAN PARA NAVEGAR A LA VISTA DETALLADA DEL CARRITO
-  //ELIMINAR COMENTARIO CUANDO TENGAMOS EL BOTON EN EL POP UP
-
   return (
     <div className="detail-card">
       <img
