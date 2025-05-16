@@ -3,10 +3,11 @@ import { useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector.jsx";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
 import { useBookCardQuantity } from "../../Hooks/Hooks.js";
-
+import { useOutletContext } from "react-router-dom";
 const BookDetailCard = ({ selectedBook }) => {
   const { bookQuantity, handleQuantityChange } = useBookCardQuantity();
   const { addBook } = useContext(BookCardContext);
+  const { toggleCart } = useOutletContext();
 
   const handleAddToCart = () => {
     const book = {
@@ -17,6 +18,7 @@ const BookDetailCard = ({ selectedBook }) => {
     };
     addBook(book);
     handleQuantityChange(0);
+    toggleCart(true);
   };
 
   return (
