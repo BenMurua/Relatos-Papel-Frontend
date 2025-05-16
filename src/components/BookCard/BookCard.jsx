@@ -17,6 +17,7 @@ const BookCard = ({ id, bookImage, title, author, price, description }) => {
     e.stopPropagation();
     const book = { id: id, quantity: bookQuantity };
     addBook(book);
+    handleQuantityChange(0);
   };
 
   const navigatetobookdetail = () => {

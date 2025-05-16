@@ -17,6 +17,7 @@ const BookDetailCard = ({ selectedBook }) => {
   const handleAddToCart = () => {
     const book = { id: selectedBook.id, quantity: bookQuantity };
     addBook(book);
+    handleQuantityChange(0);
   };
 
   //MOMENTANEO, HASTA QUE TENGAMOS EL BOTON EN EL POP UP DE ADRIAN PARA NAVEGAR A LA VISTA DETALLADA DEL CARRITO
