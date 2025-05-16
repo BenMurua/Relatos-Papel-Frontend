@@ -12,7 +12,3 @@
   overflow-y: auto;
 }
  
-.book-grid > * {
-  animation: fadeInBook 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-}
- 

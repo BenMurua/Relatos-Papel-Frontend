@@ -13,7 +13,7 @@
   z-index: 100;
 }
 
-.cart-dropdown h3 {
+.cart-dropdown__h3 {
   margin-top: 0;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -21,13 +21,13 @@
   padding-bottom: 0.5rem;
 }
 
-.cart-dropdown ul {
+.cart-dropdown__ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.cart-dropdown li {
+.cart-dropdown__li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,7 @@
   font-size: 0.9rem;
 }
 
-.cart-dropdown li button {
+.cart-dropdown__li__button {
   background: none;
   border: none;
   color: var(--text-color);
