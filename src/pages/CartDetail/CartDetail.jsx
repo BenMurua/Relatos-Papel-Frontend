@@ -43,7 +43,7 @@ function CartDetail() {
 
   return (
     <div className="cart-detail">
-      <h1>{title}</h1>
+      <h1 className="cart-detail__h1">{title}</h1>
       <div className="cart-detail__layout">
         <CartItemsList
           items={books}

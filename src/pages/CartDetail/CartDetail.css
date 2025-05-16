@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-.cart-detail h1 {
+.cart-detail__h1 {
   font-size: 24px;
   margin-bottom: 20px;
   color: var(--text-color);
