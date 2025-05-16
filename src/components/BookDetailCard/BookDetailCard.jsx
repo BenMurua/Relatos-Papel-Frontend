@@ -1,15 +1,12 @@
 import "./BookDetailCard.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector.jsx";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
+import { useBookCardQuantity } from "../../Hooks/Hooks.js";
 
 const BookDetailCard = ({ selectedBook }) => {
-  const [bookQuantity, setBookQuantity] = useState(0);
+  const { bookQuantity, handleQuantityChange } = useBookCardQuantity();
   const { addBook } = useContext(BookCardContext);
-
-  const handleQuantityChange = (newQuantity) => {
-    setBookQuantity(newQuantity);
-  };
 
   const handleAddToCart = () => {
     const book = {
