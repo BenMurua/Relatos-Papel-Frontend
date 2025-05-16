@@ -20,6 +20,7 @@ const Header = ({ isCartOpen, onCartToggle }) => {
   const cartSrc = theme === THEMES.LIGHT ? cartDark : cartLight;
 
   const handleLogoClick = () => {
+    onCartToggle(false);
     navigate(RoutesValues.app);
   };
 
