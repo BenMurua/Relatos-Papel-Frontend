@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import Landing from "../pages/Landing/Landing";
 import LandingError from "../pages/RouteError/RouteError";
@@ -7,7 +7,7 @@ import Layout from "../components/Layout/Layout";
 import CartDetail from "../pages/CartDetail/CartDetail";
 import Checkout from "../pages/Checkout/Checkout";
 import BookDetail from "../pages/BookDetail/BookDetail";
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: RoutesValues.landing,
     element: <Landing />,
