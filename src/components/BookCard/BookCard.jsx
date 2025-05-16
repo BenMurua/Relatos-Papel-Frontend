@@ -32,6 +32,7 @@ const BookCard = ({ id, bookImage, title, author, price, description }) => {
       price: price,
       description: description,
     };
+    toggleCart(false);
     navigate(RoutesValues.bookDetail, { state: { selectedBook: book } });
   };
 
