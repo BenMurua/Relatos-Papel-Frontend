@@ -14,7 +14,7 @@ const BookCard = ({ id, bookImage, title, author, price }) => {
   };
 
   const handleAddToCart = () => {
-    const book = { id: id, quantity: bookQuantity };
+    const book = { id: id, quantity: bookQuantity, title: title, price: price };
     addBook(book);
   };
 
