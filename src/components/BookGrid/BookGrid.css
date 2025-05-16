@@ -1,18 +1,18 @@
 .book-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem 2rem;
-  padding: 2.5rem 2vw 2rem 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   background: var(--background-gradient);
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
   transition: background 0.3s;
   min-height: 100vh;
-  box-sizing: border-box;
-  align-items: start;
-  justify-items: center;
+  margin-bottom: 5vh;
+  margin-right: 5vh;
   overflow-y: auto;
 }
-
+ 
 .book-grid > * {
   animation: fadeInBook 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
+ 

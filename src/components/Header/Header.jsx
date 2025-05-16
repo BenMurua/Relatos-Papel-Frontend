@@ -9,22 +9,18 @@ import { ThemeContext } from "../../context/themeContext";
 import { BookCardContext } from "../../context/bookCardContext";
 import { THEMES } from "../../models/constants";
 import CartPopup from "../CartPopup/CartPopup";
+import { RoutesValues } from "../../models/RoutesValues";
 
-const Header = () => {
+const Header = ({ isCartOpen, onCartToggle }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const { deleteBook } = useContext(BookCardContext);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const navigate = useNavigate();
 
   const logoSrc = theme === THEMES.LIGHT ? logoDark : logoLight;
   const cartSrc = theme === THEMES.LIGHT ? cartDark : cartLight;
 
   const handleLogoClick = () => {
-    navigate("/app");
-  };
-
-  const handleCartClick = () => {
-    setIsCartOpen((prev) => !prev);
+    navigate(RoutesValues.app);
   };
 
   const handleDelete = (id) => {
@@ -59,14 +55,21 @@ const Header = () => {
 
         <div className="header__cart-wrapper">
           <button
-            onClick={handleCartClick}
+            onClick={() => {
+              onCartToggle();
+            }}
             className="theme-toggle"
             aria-label="Abrir carrito"
           >
             <img className="header__cart" src={cartSrc} alt="Cart" />
           </button>
 
-          {isCartOpen && <CartPopup handleDelete={handleDelete} />}
+          {isCartOpen && (
+            <CartPopup
+              handleDelete={handleDelete}
+              handleCartToggle={onCartToggle}
+            />
+          )}
         </div>
       </div>
     </header>

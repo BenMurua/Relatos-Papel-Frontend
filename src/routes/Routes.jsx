@@ -6,6 +6,7 @@ import { RoutesValues } from "../models/RoutesValues";
 import Layout from "../components/Layout/Layout";
 import CartDetail from "../pages/CartDetail/CartDetail";
 import Checkout from "../pages/Checkout/Checkout";
+import BookDetail from "../pages/BookDetail/BookDetail";
 export const router = createBrowserRouter([
   {
     path: RoutesValues.landing,
@@ -24,7 +25,14 @@ export const router = createBrowserRouter([
         path: RoutesValues.cart,
         element: <CartDetail />,
       },
-      { path: RoutesValues.checkout, element: <Checkout /> },
+      {
+        path: RoutesValues.checkout,
+        element: <Checkout />,
+      },
+      {
+        path: RoutesValues.bookDetail,
+        element: <BookDetail />,
+      },
     ],
   },
 ]);

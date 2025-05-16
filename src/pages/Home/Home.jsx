@@ -11,20 +11,16 @@ const Home = () => {
   const [selectedAuthors, setSelectedAuthors] = useState([]);
   const books = getAllBooks();
 
-  // Obtener autores únicos
   const authors = [...new Set(books.map((book) => book.author))];
 
-  // Filtrado por search y searchType
   let filteredBooks = searchBooks(books, search, searchType);
 
-  // Filtrado adicional por autores seleccionados
   if (selectedAuthors.length > 0) {
     filteredBooks = filteredBooks.filter((book) =>
       selectedAuthors.includes(book.author)
     );
   }
 
-  // Manejar selección de autores
   const handleAuthorChange = (author) => {
     setSelectedAuthors((prev) =>
       prev.includes(author)

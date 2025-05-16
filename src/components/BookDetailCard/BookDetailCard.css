@@ -1,0 +1,88 @@
+.detail-card {
+  width: 100%;
+  max-width: 680px;
+  min-height: 760px;
+  background: var(--form-background);
+  border: 1px solid var(--form-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem auto;
+  transition: box-shadow 0.3s, background 0.3s, border 0.3s;
+}
+
+.detail-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  background: var(--option-hover);
+}
+
+.detail-card__image {
+  width: 240px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--form-border);
+  margin-bottom: 1rem;
+  background: var(--input-background);
+  transition: border 0.2s;
+}
+
+.detail-card__title {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.2rem;
+  text-align: center;
+}
+
+.detail-card__author,
+.detail-card__price {
+  color: var(--subtext-color);
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0.1rem 0;
+  text-align: center;
+}
+
+.detail-card__button {
+  background-color: var(--button-background);
+  color: var(--button-color);
+  border: none;
+  border-radius: 4px;
+  width: 80%;
+  height: 2.2rem;
+  margin: 0.7rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.detail-card__button:hover {
+  background-color: var(--button-hover);
+  color: var(--text-color);
+}
+
+.detail-card__quantity-selector {
+  width: 100%;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .detail-card {
+    width: 95%;
+    min-height: 320px;
+    padding: 1rem;
+  }
+
+  .detail-card__image {
+    width: 90px;
+    height: 130px;
+  }
+}

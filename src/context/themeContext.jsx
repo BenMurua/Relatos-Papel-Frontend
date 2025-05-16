@@ -5,12 +5,12 @@ export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(
-    localStorage.getItem("app-theme") || THEMES.LIGHT // Recuperar tema del localStorage
+    localStorage.getItem("app-theme") || THEMES.LIGHT
   );
 
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme); // Cambia el atributo del HTML
-    localStorage.setItem("app-theme", theme); // Guarda el tema en el localStorage
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("app-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {

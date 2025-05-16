@@ -1,0 +1,10 @@
+.book-detail {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+
+.book-detail__content {
+  flex: 1;
+}

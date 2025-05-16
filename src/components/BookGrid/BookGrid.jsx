@@ -13,6 +13,7 @@ const BookGrid = ({ books }) => {
           title={book.title}
           author={book.author}
           price={book.price}
+          description={book.description}
         />
       ))}
     </div>
