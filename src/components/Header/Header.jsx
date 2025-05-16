@@ -7,7 +7,7 @@ import cartLight from "../../assets/CartWhite.svg";
 import cartDark from "../../assets/CartBlack.svg";
 import { ThemeContext } from "../../context/themeContext";
 import { BookCardContext } from "../../context/bookCardContext";
-import { THEMES } from "../../models/constants";
+import { THEMES } from "../../models/Constants";
 import CartPopup from "../CartPopup/CartPopup";
 import { RoutesValues } from "../../models/RoutesValues";
 
