@@ -18,6 +18,6 @@ export const searchBooks = (books, search, searchType) => {
   if (searchType === "author") {
     return books.filter((book) => book.author.toLowerCase().includes(term));
   }
-  // Por defecto busca por título
+
   return books.filter((book) => book.title.toLowerCase().includes(term));
 };

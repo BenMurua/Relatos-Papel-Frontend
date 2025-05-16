@@ -1,17 +1,20 @@
 import "./QuantitySelector.css";
 
 function QuantitySelector({ quantity, handleQuantityChange }) {
-  const onIncrease = () => {
+  const onIncrease = (e) => {
+    e.stopPropagation();
     handleQuantityChange(quantity + 1);
   };
 
-  const onDecrease = () => {
+  const onDecrease = (e) => {
+    e.stopPropagation();
     if (quantity > 0) {
       handleQuantityChange(quantity - 1);
     }
   };
 
   const handleInputChange = (e) => {
+    e.stopPropagation();
     const value = parseInt(e.target.value, 10);
     if (!isNaN(value) && value >= 0) {
       handleQuantityChange(value);

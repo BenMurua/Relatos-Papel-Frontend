@@ -3,4 +3,5 @@ export const RoutesValues = {
   landing: "/",
   cart: "cart",
   checkout: "checkout",
+  bookDetail: "bookdetail",
 };
