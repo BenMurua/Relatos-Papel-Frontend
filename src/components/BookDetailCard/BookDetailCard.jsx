@@ -2,11 +2,8 @@ import "./BookDetailCard.css";
 import { useState, useContext } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector.jsx";
 import { BookCardContext } from "../../context/bookCardContext.jsx";
-import { useNavigate } from "react-router-dom";
-import { RoutesValues } from "../../models/RoutesValues.js";
 
 const BookDetailCard = ({ selectedBook }) => {
-  const navigate = useNavigate();
   const [bookQuantity, setBookQuantity] = useState(0);
   const { addBook } = useContext(BookCardContext);
 
@@ -15,7 +12,12 @@ const BookDetailCard = ({ selectedBook }) => {
   };
 
   const handleAddToCart = () => {
-    const book = { id: selectedBook.id, quantity: bookQuantity };
+    const book = {
+      id: selectedBook.id,
+      quantity: bookQuantity,
+      title: selectedBook.title,
+      price: selectedBook.price,
+    };
     addBook(book);
     handleQuantityChange(0);
   };
