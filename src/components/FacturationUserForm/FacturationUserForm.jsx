@@ -8,6 +8,7 @@ function FacturationUserForm() {
           Nombre:
           <input
             type="text"
+            id="name"
             name="firstName"
             className="facturation-form__input"
             placeholder="Introduce tu nombre"
@@ -19,6 +20,7 @@ function FacturationUserForm() {
           <input
             type="text"
             name="lastName"
+            id="lastName"
             className="facturation-form__input"
             placeholder="Introduce tus apellidos"
           />
@@ -30,6 +32,7 @@ function FacturationUserForm() {
         <input
           type="text"
           name="companyName"
+          id="companyName"
           className="facturation-form__input"
           placeholder="Nombre de la empresa"
         />
@@ -40,6 +43,7 @@ function FacturationUserForm() {
         <input
           type="text"
           name="address"
+          id="address"
           className="facturation-form__input"
           placeholder="Calle, número, piso..."
         />
@@ -50,6 +54,7 @@ function FacturationUserForm() {
         <input
           type="text"
           name="postalCode"
+          id="postalCode"
           className="facturation-form__input"
           placeholder="Ej: 28001"
         />
@@ -60,6 +65,7 @@ function FacturationUserForm() {
         <input
           type="text"
           name="city"
+          id="city"
           className="facturation-form__input"
           placeholder="Ciudad o localidad"
         />
@@ -70,6 +76,7 @@ function FacturationUserForm() {
         <input
           type="tel"
           name="phone"
+          id="phone"
           className="facturation-form__input"
           placeholder="Número de contacto"
         />
